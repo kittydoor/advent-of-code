@@ -13,11 +13,11 @@ func main() {
 		log.Fatal("Exactly one argument, the elevator command, should be provided")
 	}
 
-	result, err := elevator.Use(os.Args[1])
+	floor, basement, err := elevator.Use(os.Args[1])
 
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	fmt.Println(result)
+	fmt.Printf("Floor: %v, Basement: %v\n", floor, basement)
 }
