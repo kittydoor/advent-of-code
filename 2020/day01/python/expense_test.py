@@ -2,6 +2,7 @@ import unittest
 
 from expense import calculate
 
+
 class TestExpenseMethod(unittest.TestCase):
     def test_empty(self):
         self.assertEqual(calculate([], 2), None)
@@ -31,6 +32,7 @@ class TestExpenseMethod(unittest.TestCase):
 
     def test_p2_three_2020(self):
         self.assertEqual(calculate([800, 1200, 20], 3), 800 * 1200 * 20)
+
 
 if __name__ == '__main__':
     unittest.main()

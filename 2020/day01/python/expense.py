@@ -1,6 +1,7 @@
-import sys
 import itertools
+import sys
 from functools import reduce
+
 
 def calculate(values: list[int], count: int) -> int:
     """
@@ -21,6 +22,7 @@ def calculate(values: list[int], count: int) -> int:
     # final resort
     return None
 
+
 if __name__ == '__main__':
     if len(sys.argv) < 3:
         print("usage: expense.py <target> <count>")
@@ -32,7 +34,7 @@ if __name__ == '__main__':
     with open(target) as f:
         contents = f.readlines()
 
-    expense_report = [ int(line.strip()) for line in contents ]
+    expense_report = [int(line.strip()) for line in contents]
 
     result = calculate(expense_report, count)
 
