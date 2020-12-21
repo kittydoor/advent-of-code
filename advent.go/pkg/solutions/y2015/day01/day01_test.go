@@ -1,10 +1,10 @@
-package elevator
+package day01
 
 import (
 	"testing"
 )
 
-func TestUse(t *testing.T) {
+func TestUseElevator(t *testing.T) {
 	var tests = []struct {
 		command      string
 		wantFloor    int
@@ -23,7 +23,7 @@ func TestUse(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.command, func(t *testing.T) {
-			floor, basement, err := Use(tt.command)
+			floor, basement, err := UseElevator(tt.command)
 			if floor != tt.wantFloor || basement != tt.wantBasement || err != nil {
 				t.Errorf("got %d (%d), want %d (%d)", floor, basement, tt.wantFloor, tt.wantBasement)
 			}
