@@ -6,8 +6,10 @@ func Use(command string) (floor int, basement int, err error) {
 
 	for index, element := range []rune(command) {
 		switch element {
-			case '(': floor += 1
-			case ')': floor -= 1
+		case '(':
+			floor++
+		case ')':
+			floor--
 		}
 		if basement == 0 && floor < 0 {
 			basement = index + 1

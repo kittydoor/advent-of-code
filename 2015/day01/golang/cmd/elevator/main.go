@@ -1,9 +1,9 @@
 package main
 
 import (
-	"os"
 	"fmt"
 	"log"
+	"os"
 
 	"github.com/kittydoor/advent-of-code/2015/day01/golang/pkg/elevator"
 )
