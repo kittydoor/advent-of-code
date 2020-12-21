@@ -1,7 +1,7 @@
 """Test module for toboggan"""
 import unittest
 
-from toboggan import parse, process, verify
+from .day02 import parse, process, verify
 
 invalid_values = [
     "1-3 : abcde",
