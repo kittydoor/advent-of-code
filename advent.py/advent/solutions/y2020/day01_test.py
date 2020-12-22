@@ -1,6 +1,6 @@
 import unittest
 
-from expense import calculate
+from .day01 import calculate
 
 
 class TestExpenseMethod(unittest.TestCase):
