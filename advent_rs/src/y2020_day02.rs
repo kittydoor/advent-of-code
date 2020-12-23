@@ -71,7 +71,7 @@ fn password_philosophy_p2(passwords: &[&str]) ->  u32 {
             .nth(entry.max as usize - 1)
             .unwrap() == entry.ch;
 
-        (left || right) && !(left && right)
+        left != right
     };
 
     passwords
