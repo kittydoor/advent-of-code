@@ -8,8 +8,12 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-      - name: checkout code
-        uses: actions/checkout@v2
+      # setup
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version:'3.x'
 
+      # testing
       - name: make test
         run: make test
