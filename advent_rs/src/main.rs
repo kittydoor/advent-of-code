@@ -3,6 +3,8 @@ use structopt::StructOpt;
 use anyhow::{Context, Result};
 
 mod y2020_day01;
+mod y2020_day02;
+mod y2020_day03;
 
 #[derive(StructOpt)]
 struct Cli {
@@ -24,6 +26,8 @@ fn main() -> Result<()> {
 
     let result = match args.challenge.as_str() {
         "2020-01" => y2020_day01::report_repair(&content, &args.part),
+        "2020-02" => y2020_day02::password_philosophy(&content, &args.part),
+        "2020-03" => y2020_day03::toboggan_trajectory(&content, &args.part),
         _ => panic!("Challenge {} not implemented", args.challenge),
     };
 
