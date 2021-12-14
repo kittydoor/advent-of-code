@@ -21,14 +21,14 @@ def part_one(cmds):
         direction, count = cmd.split(' ')
         count = int(count)
 
-        if direction == 'forward':
-            horizon = horizon + count
-        elif direction == 'backward':
-            horizon = horizon - count
-        elif direction == 'up':
+        if direction == 'up':
             depth = depth - count
         elif direction == 'down':
             depth = depth + count
+        elif direction == 'forward':
+            horizon = horizon + count
+        elif direction == 'backward':
+            horizon = horizon - count
         else:
             print("This should not happen")
 
@@ -36,6 +36,28 @@ def part_one(cmds):
 
 
 def part_two(cmds):
+    horizon = 0
+    depth = 0
+    aim = 0
+
+    for cmd in cmds:
+        direction, count = cmd.split(' ')
+        count = int(count)
+
+        if direction == 'up':
+            aim = aim - count
+        elif direction == 'down':
+            aim = aim + count
+        elif direction == 'forward':
+            horizon = horizon + count
+            depth = depth + count * aim
+        elif direction == 'backward':
+            horizon = horizon - count
+            depth = depth - count * aim
+        else:
+            print("This should not happen")
+
+    return horizon * depth
     pass
 
 
@@ -45,8 +67,7 @@ class TestSolution(unittest.TestCase):
         self.assertEqual(process(TEST_DATA, 1), 15*10)
 
     def test_two(self):
-        pass
-        #self.assertEqual(process(TEST_DATA, 2), -1)
+        self.assertEqual(process(TEST_DATA, 2), 15*60)
 
 
 if __name__ == '__main__':
