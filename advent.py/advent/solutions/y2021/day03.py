@@ -1,3 +1,4 @@
+from operator import add
 import unittest
 import sys
 
@@ -19,7 +20,7 @@ def part_one(report):
     size = len(report[0])
     slots = [0 for _ in range(size)]
     for r in report:
-        slots = list(map(sum, zip(slots, [int(x) for x in list(r)])))
+        slots = list(map(add, slots, [int(x) for x in list(r)]))
 
     def gamma(i):
         if i > len(report) / 2:
